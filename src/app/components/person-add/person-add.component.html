@@ -1,0 +1,37 @@
+<div class="mat-dialog-title">
+    <h1>Person Form</h1>
+</div>
+<form [formGroup]="perForm" (ngSubmit)="formSubmit()">
+<div mat-dialog-content class="content">
+    <div class="row">
+        <mat-form-field appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput type="text" formControlName="name">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Last Name</mat-label>
+            <input matInput type="text" formControlName="lastName">
+        </mat-form-field>
+    </div>
+    <div class="row">
+        <mat-form-field appearance="outline">
+            <mat-label>Age</mat-label>
+            <input matInput type="number" formControlName="age">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>City</mat-label>
+            <input matInput type="text" formControlName="city">
+        </mat-form-field>
+    </div>
+      
+</div>
+<div mat-dialog-actions class="action">
+    <p-toast></p-toast>
+    <button mat-raised-button type="button" (click)="closeForm()">Cancel</button>
+    <button mat-raised-button color="primary" type="submit" (click)="showSuccess()"  [disabled]="perForm.invalid">{{data ? 'Update': 'Save'}}</button>
+</div>
+
+
+
+</form>
+
